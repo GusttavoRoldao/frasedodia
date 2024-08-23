@@ -1,0 +1,3 @@
+-menu principal do site
+-botao para gerar a frase nova
+-frase gerada
