@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querodormirsocorro</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Sobre o miaw</a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Gatos/" target="_blank">Mais Fofuras</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Gatos Gratis</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="center">
+            <img id="imagem-gato" src="" alt="Gatinho Aleatório">
+        </div>
+        <h1>Gatinho de Programa</h1>
+        <h2>miaw miaw miaw</h2>
+        <main>
+            <section>
+                <h3>Contrate Já O Seu</h3>
+                <p>
+                    Ele pode não saber o que é um bug, mas com certeza sabe 
+                    como esfregar a cabeça na tela do computador para garantir que
+                    o código fique perfeito. Garanta já o seu amigo felino para codificar 
+                    e te ajudar a enfrentar qualquer linha de erro com um miado de motivação! 🐾💻
+                </p>
+            </section>
+        </main>
+    </header>
+    <!-- Adiciona o elemento de áudio -->
+    <audio id="som-gato" src="./audio/miaaw.mp3"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imagens = [
+                './img/gatin de vo.webp', // Substitua pelos caminhos das suas imagens
+                './img/gatostyle.jfif',
+                './img/gatonoia.jfif',
+            ];
+
+            // Seleciona uma imagem aleatória do array
+            const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+
+            // Define o src da imagem no HTML
+            const imagemElement = document.getElementById('imagem-gato');
+            imagemElement.src = imagemAleatoria;
+
+            // Adiciona um evento de clique à imagem
+            imagemElement.addEventListener('click', function() {
+                const somGato = document.getElementById('som-gato');
+                somGato.play(); // Reproduz o som quando a imagem é clicada
+            });
+        });
+    </script>
+</body>
+</html>
