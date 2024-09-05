@@ -1,10 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Teste</title>
+    <title>querodormirsocorro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-    <h1>Vamo ver se funciona</h1>
-    <button onclick="alert('Funcionou!')">Clique Aqui</button>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Sobre o miaw</a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Gatos/" target="_blank">Mais Fofuras</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Gatos Gratis</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="center">
+            <img id="imagem-gato" src="" alt="Gatinho Aleatório">
+        </div>
+        <h1>Gatinho de Programa</h1>
+        <h2>miaw miaw miaw</h2>
+        <h1>Conteúdo Dinâmico</h1>
+        <p id="conteudo">Texto inicial do cliente.</p>
+        <button id="botaoAtualizar">Atualizar Texto</button>
+
+        <main>
+            <section>
+                <h3>Contrate Já O Seu</h3>
+                <p>
+                    Ele pode não saber o que é um bug, mas com certeza sabe 
+                    como esfregar a cabeça na tela do computador para garantir que
+                    o código fique perfeito. Garanta já o seu amigo felino para codificar 
+                    e te ajudar a enfrentar qualquer linha de erro com um miado de motivação! 🐾💻
+                </p>
+            </section>
+        </main>
+    </header>
+    <audio id="som-gato" src="{% static 'audio/miaaw.mp3' %}"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imagens = [
+                "{% static 'img/gatin de vo.webp' %}",
+                "{% static 'img/gatostyle.jfif' %}",
+                "{% static 'img/gatonoia.jfif' %}",
+            ];
+
+            const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+            const imagemElement = document.getElementById('imagem-gato');
+            imagemElement.src = imagemAleatoria;
+
+            imagemElement.addEventListener('click', function() {
+                const somGato = document.getElementById('som-gato');
+                somGato.play();
+            });
+        });
+        document.getElementById('botaoAtualizar').addEventListener('click', function() {
+            // Faz uma requisição AJAX para o servidor
+            fetch('./atualizar_texto/?novo_texto=Texto atualizado do servidor!')
+                .then(response => response.json())
+                .then(data => {
+                    // Atualiza o texto na página com a resposta do servidor
+                    document.getElementById('conteudo').innerText = data.novo_texto;
+                })
+                .catch(error => console.error('Erro ao atualizar:', error));
+        });
+    </script>
+
 </body>
 </html>

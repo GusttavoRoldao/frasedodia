@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh; /* Faz com que o corpo ocupe a altura total da janela */
-    background-image: url('./img/gatinfo.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('../img/gatinfo.png'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir o fundo completamente */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita que a imagem se repita */

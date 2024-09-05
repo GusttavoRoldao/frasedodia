@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w9e$!jols#8fuv=d%9^*1^vejkjirhwr0jcst_5gqwudcsg&h!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '187.57.33.131']
 
 
 # Application definition
@@ -67,6 +67,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'frasedodia.wsgi.application'
 
@@ -119,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# Configuração dos arquivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
